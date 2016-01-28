@@ -13,6 +13,7 @@ get '/' do
 end
 
 get '/results' do
+  @item = Item.last
   erb :result
 end
 
@@ -32,7 +33,8 @@ post '/results' do
     if @items.save
       redirect '/results'
     else
-      redirect '/'
+      @items.errors.full_messages
+      erb :'index' 
     end
   end
 
