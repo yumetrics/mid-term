@@ -1,5 +1,5 @@
 # Homepage (Root path)
-# require_relative 'views/_constants.rb'
+
 
 # helpers do
 #   def current_user
@@ -16,7 +16,7 @@ get '/results' do
   erb :result
 end
 
-post '/' do
+post '/results' do
   @items = Item.new(
     user_id: 1,
     desired_name: params[:desired_name],
@@ -25,14 +25,14 @@ post '/' do
     base_price: params[:base_price]
     )
 
-    @items.save
-    if @items.save
-      p "success"
-    end
+    # @items.save
     # if @items.save
-    #   redirect '/results'
-    # else
-    #   redirect '/'
+    #   p "success"
     # end
+    if @items.save
+      redirect '/results'
+    else
+      redirect '/'
+    end
   end
 
