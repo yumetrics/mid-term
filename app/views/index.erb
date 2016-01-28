@@ -1,49 +1,96 @@
+<div id="wrapper">
 
-
-<h1>Coffee Guilt</h1>
-
-
-<% if @items && @items.errors.any? %>
-  <div>
-    <strong>You base item is greater than your dream item! Try again.</strong>
-    <ul>
-      <% @items.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-    </ul>
+<!-- Sidebar -->
+  <div id="sidebar-wrapper">
+      <ul class="sidebar-nav">
+          <li class="sidebar-brand">
+              <a href="#">
+                  Start Bootstrap
+              </a>
+          </li>
+          <li>
+              <a href="#">Dashboard</a>
+          </li>
+          <li>
+              <a href="#">Shortcuts</a>
+          </li>
+          <li>
+              <a href="#">Overview</a>
+          </li>
+          <li>
+              <a href="#">Events</a>
+          </li>
+          <li>
+              <a href="#">About</a>
+          </li>
+          <li>
+              <a href="#">Services</a>
+          </li>
+          <li>
+              <a href="#">Contact</a>
+          </li>
+      </ul>
   </div>
-<% end %>
+<!-- /#sidebar-wrapper -->
 
+<!-- Page Content -->
+  <div id="page-content-wrapper">
+    <div class="container-fluid">
+      <div class="row">
+          <div class="col-lg-12">
+              <h1>Coffee Guilt</h1>
 
-<form class="form-horizontal" method="post" action="/results">
+              <% if @items && @items.errors.any? %>
+                <div>
+                  <strong>You base item is greater than your dream item! Try again.</strong>
+                  <ul>
+                    <% @items.errors.full_messages.each do |message| %>
+                      <li><%= message %></li>
+                    <% end %>
+                  </ul>
+                </div>
+              <% end %>
 
-  <div class="col-xs-8">
-    <br>
-    <label for="DesiredName">Dream Item:</label>
-    <input type="text" class="form-control" name="desired_name" id="desired_name" placeholder="Item name">
- </div>
+            <div class="row">
+              <form class="form-horizontal" method="post" action="/results">
 
-  <div class="col-xs-8">
-    <br>
-    <label for="DesiredPrice">Dream Item Cost:</label>
-    <input type="integer" class="form-control" name="desired_price" id="desired_price" placeholder="Item price">
-  </div
+                <div class="col-xs-8">
+                  <br>
+                  <label for="DesiredName">Dream Item:</label>
+                  <input type="text" class="form-control" name="desired_name" id="desired_name" placeholder="Item name">
+               </div>
 
-  <div class="col-xs-8">
-    <br>
-    <label for="BaseName">Base Item:</label>
-    <input type="text" class="form-control" name="base_name" id="base_name" value="coffee" readonly placeholder="coffee">
- </div>
+                <div class="col-xs-8">
+                  <br>
+                  <label for="DesiredPrice">Dream Item Cost:</label>
+                  <input type="integer" class="form-control" name="desired_price" id="desired_price" placeholder="Item price">
+                </div>
 
-  <div class="col-xs-8">
-    <br>
-    <label for="BasePrice">Base Item Cost:</label>
-    <input type="integer" class="form-control" name="base_price" id="base_price" value="5" readonly placeholder="5">
- </div>  
+                <div class="col-xs-8">
+                  <br>
+                  <label for="BaseName">Base Item:</label>
+                  <input type="text" class="form-control" name="base_name" id="base_name" value="coffee" readonly placeholder="coffee">
+               </div>
 
-  <div class="col-sm-10">
-    <br>
-    <button type="submit" class="btn btn-primary">Calculate</button>
+                <div class="col-xs-8">
+                  <br>
+                  <label for="BasePrice">Base Item Cost:</label>
+                  <input type="integer" class="form-control" name="base_price" id="base_price" value="5" readonly placeholder="5">
+               </div>  
+
+                <div class="col-sm-10">
+                  <br>
+                  <button type="submit" class="btn btn-primary">Calculate</button>
+                </div>
+
+              </form>
+
+            </div>
+        </div>
+      </div>
+    </div>
   </div>
+<!-- /#page-content-wrapper -->
 
-</form>
+</div>
+<!-- /#wrapper -->
