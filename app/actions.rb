@@ -3,7 +3,7 @@ get '/' do
   erb :index
 end
 
-get '/messages' do
+get '/results' do
   # 'Message List here'
   @messages = Message.all
   erb :'messages/index'
