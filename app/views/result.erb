@@ -8,21 +8,18 @@
 
             <h3> <%= @item.threshold %> </h3>
           </div>
-          <div class="container">
-            <div id='coffee_icon'>
-              <script type="text/javascript">
-                var parent    = document.getElementById('coffee_icon'),
-                    imagePath = 'http://imgh.us/coffee.svgz',
-                    img;
 
-                for (var i = 0; i <= 30; i++) {
-                    img = new Image();
-                    img.src = imagePath;
-                    parent.appendChild(img);
-                }
-              </script>
-            </div>
+          <div class="container">
+            <ul class='no_indent'>
+
+            <% @calculation = (@item.desired_price / @item.base_price).floor %>
+            <% @calculation.times do |c| %>
+
+              <li class='coffee_icon'></li>
+            <% end %>
+            </ul>
           </div>
+        
       </div>
     </div>
   </div>

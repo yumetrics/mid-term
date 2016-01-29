@@ -1,0 +1,15 @@
+ul.no_indent {
+    margin-left: 0em;
+/*    padding-left: -10em;*/
+}
+
+li.coffee_icon {
+  content: url(http://imgh.us/coffee.svgz);
+  display: inline;
+  width: 30vw;
+  height: 30vh;
+  margin-left: -10em;
+  margin-right: -8em;
+
+
+}
