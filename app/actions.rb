@@ -1,14 +1,14 @@
 # Homepage (Root path)
 
 
-# helpers do
-#   def current_user
-#     User.find { |u| u[:id] == session[:user_id] } if session[:user_id]
-#   end
-# end
+helpers do
+  def current_user
+    User.find { |u| u[:id] == session[:user_id] } if session[:user_id]
+  end
+end
 
 get '/' do
-  # session[:user_id]
+  session[:user_id]
   erb :index
 end
 
@@ -36,5 +36,10 @@ post '/results' do
       @items.errors.full_messages
       erb :'index' 
     end
+  end
+
+  post '/' do
+    @results = Item.last(10).reverse
+    erb :index
   end
 
