@@ -13,7 +13,6 @@ get '/' do
 end
 
 get '/results' do
-  @allitems = Item.all
   @item = Item.last
   erb :result
 end
