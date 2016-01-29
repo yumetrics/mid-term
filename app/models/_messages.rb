@@ -1,3 +1,4 @@
+class Messages
 
 # if result < $100 (desired_item is < base_item * 20)
 TYPE1 = [
@@ -36,7 +37,6 @@ TYPE4 = [
 ]
 
 # if result >= $50000 (desired_item is >= base_item * 10000)
-
 TYPE5 = [
   "Welp, on the brightside, you'll corner the stock market on coffee if you liquidate",
   "Either your a complete moron or your really really stupid",
@@ -45,3 +45,4 @@ TYPE5 = [
   "Are you the great coffee bandit of 1874?"
 ]
 
+end
