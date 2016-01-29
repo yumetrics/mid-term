@@ -8,9 +8,20 @@
 
             <h3> <%= @item.threshold %> </h3>
           </div>
-          <div class="container-fluid">
-          <img src="http://imgh.us/coffee.svgz">
+          <div class="container">
+            <div id='coffee_icon'>
+              <script type="text/javascript">
+                var parent    = document.getElementById('coffee_icon'),
+                    imagePath = 'http://imgh.us/coffee.svgz',
+                    img;
 
+                for (var i = 0; i <= 30; i++) {
+                    img = new Image();
+                    img.src = imagePath;
+                    parent.appendChild(img);
+                }
+              </script>
+            </div>
           </div>
       </div>
     </div>
