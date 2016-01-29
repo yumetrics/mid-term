@@ -7,6 +7,12 @@
             <h2>A <%= @item.desired_name %> will get you <%= (@item.desired_price / @item.base_price).floor %>  <%= @item.base_name %>s </h2>
 
             <h3> <%= @item.threshold %> </h3>
+
+            <h4> <%= @list = @allitems.order(created_at: :desc).limit(10) %>
+            <p><%= p @list %></p>
+             </h4>
+
+
           </div>
       </div>
     </div>
