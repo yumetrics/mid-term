@@ -1,7 +1,7 @@
 # if result < $100 (desired_item is < base_item * 20)
 
 TYPE1 = [
-  "Thats within reason..", 
+  "That's within reason..", 
   "Mmk just this once.",
   "I'd rather buy a waffle maker.",
   "WebMD says caffeine will kill you.",
@@ -29,7 +29,7 @@ TYPE3 = [
 # if result < $50000 (desired_item is < base_item * 10000)
 TYPE4 = [
   "A new bio-study suggests bodies are comprised of 91% coffee",
-  "you've been selected to play Java the Hut in the new starbuxwars movie",
+  "You've been selected to play Java the Hut in the new starbuxwars movie",
   "Coffee isn't really a reasonable comparison at this point.",
   "Just enjoy the coffees. All the coffees!",
   "This is a completely justified purchase. Haters gon' hate."
@@ -37,8 +37,8 @@ TYPE4 = [
 
 # if result >= $50000 (desired_item is >= base_item * 10000)
 TYPE5 = [
-  "Welp, on the brightside, you'll corner the stock market on coffee if you liquidate",
-  "Either your a complete moron or your really really stupid",
+  "Welp, on the bright side, you'll corner the stock market on coffee if you liquidate",
+  "Either you're a complete moron or you're really really stupid",
   "I don't think coffee is the issue here.",
   "You just wanted to see a lot of coffee. Didn't you?",
   "Are you the great coffee bandit of 1874?"
