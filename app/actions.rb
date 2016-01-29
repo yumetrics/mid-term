@@ -38,3 +38,8 @@ post '/results' do
     end
   end
 
+  post '/' do
+    @results = Item.last(10).reverse
+    erb :index
+  end
+

@@ -1,6 +1,6 @@
 # if result < $100 (desired_item is < base_item * 20)
 type1 = [
-  "Thats within reason..", 
+  "That's within reason..", 
   "Mmk just this once.", 
   "I'd rather buy a waffle maker.",
   "WebMD says caffeine will kill you.",
@@ -37,7 +37,7 @@ type4 = [
 # if result >= $50000 (desired_item is >= base_item * 10000)
 type5 = [
          "Welp, on the brightside, you'll corner the stock market on coffee if you liquidate",
-         "Either your a complete moron or your really really stupid",
+         "Either your a complete moron or you're really really stupid",
          "I don't think coffee is the issue here.",
          "You just wanted to see a lot of coffee. Didn't you?",
          "Are you the great coffee bandit of 1874?"
