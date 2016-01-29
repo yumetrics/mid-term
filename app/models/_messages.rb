@@ -1,5 +1,6 @@
-# if result < $100 (desired_item is < base_item * 20)
+class Messages
 
+# if result < $100 (desired_item is < base_item * 20)
 TYPE1 = [
   "Thats within reason..", 
   "Mmk just this once.",
@@ -43,3 +44,5 @@ TYPE5 = [
   "You just wanted to see a lot of coffee. Didn't you?",
   "Are you the great coffee bandit of 1874?"
 ]
+
+end
