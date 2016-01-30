@@ -1,0 +1,41 @@
+.result_box {
+  display: block;
+}
+
+/*.coffee_container {
+  display: block;
+  position:relative;
+  border: 2px solid black;
+  width: 600px;
+  height: 600px;
+
+}*/
+
+.coffee_set {
+  position: absolute;
+  padding-right:15px;
+  padding-left:15px;
+  width: 600px;
+  height: 600px;
+}
+
+
+ul.no_indent {
+    margin-left: 0em;
+/*    padding-left: -10em;*/
+}
+
+li.coffee_icon {
+  content: url(http://imgh.us/coffee.svgz);
+  display: inline;
+  width: 15%;
+  height: 15%;
+
+
+}
+
+.last_label {
+  background-color: #FFFFFF;
+  opacity: .99;
+  width: 50%;
+}

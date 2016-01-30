@@ -28,4 +28,9 @@ def threshold
   end
 end
 
+def calculation
+ num = desired_price / base_price
+ num.floor
+end
+
 end
