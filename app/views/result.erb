@@ -2,11 +2,12 @@
 
  <div id="page-content-wrapper">
     <div class="container-fluid">
+      <div class="result_box">
       <div class="row">
           <div class="col-lg-12">
             <h1>Results</h1>
 
-            <h2>A <%= @item.desired_name %> will get you <%= ((@item.desired_price / @item.base_price).floor).to_s.reverse.gsub(/(\d{3})(?=\d)/, '\\1,').reverse %>  <%= @item.base_name %>s </h2>
+            <h2>A <%= @item.desired_name %> will get you <%= @item.calculation.to_s.reverse.gsub(/(\d{3})(?=\d)/, '\\1,').reverse %>  <%= @item.base_name %>s </h2>
 
             <h3> <%= @item.threshold %> </h3>
 
@@ -16,14 +17,24 @@
 
 
           </div>
+          </div>
 
-          <div class="container">
+          <div class="container_coffee">
             <ul class='no_indent'>
 
-            <% @calculation = (@item.desired_price / @item.base_price).floor %>
-            <% @calculation.times do |c| %>
 
-              <li class='coffee_icon'></li>
+            
+            <% if @item.calculation < 100 %>
+              <% @item.calculation.times do |c| %>
+
+                <li class='coffee_icon'></li>
+              <% end %>
+            <% else %>
+              <% 100.times do |c| %>
+
+                <li class='coffee_icon'></li>
+              <% end %>
+              <h3>Ran out of coffee images. Sry</h3>
             <% end %>
             </ul>
           </div>

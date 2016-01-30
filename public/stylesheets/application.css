@@ -1,3 +1,18 @@
+.result_box {
+  display: block;
+}
+
+.container_coffee {
+  display: block;
+  z-index: auto;
+  padding-right:15px;
+  padding-left:15px;
+  border: 2px solid black;
+  width: 600px;
+  height: 600px;
+}
+
+
 ul.no_indent {
     margin-left: 0em;
 /*    padding-left: -10em;*/
@@ -6,10 +21,8 @@ ul.no_indent {
 li.coffee_icon {
   content: url(http://imgh.us/coffee.svgz);
   display: inline;
-  width: 30vw;
-  height: 30vh;
-  margin-left: -10em;
-  margin-right: -8em;
-
+  width: 15%;
+  height: 15%;
+  margin-left: -1em;
 
 }
