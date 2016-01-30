@@ -1,3 +1,4 @@
+
 <div id="wrapper">
 
 <!-- Sidebar -->
@@ -8,27 +9,12 @@
                   Start Bootstrap
               </a>
           </li>
+          <% @all_items.each do |item| %>
+
           <li>
-              <a href="#">Dashboard</a>
+              <a href="#"><%= item.desired_name %></a>
           </li>
-          <li>
-              <a href="#">Shortcuts</a>
-          </li>
-          <li>
-              <a href="#">Overview</a>
-          </li>
-          <li>
-              <a href="#">Events</a>
-          </li>
-          <li>
-              <a href="#">About</a>
-          </li>
-          <li>
-              <a href="#">Services</a>
-          </li>
-          <li>
-              <a href="#">Contact</a>
-          </li>
+          <% end %>
       </ul>
   </div>
 <!-- /#sidebar-wrapper -->
