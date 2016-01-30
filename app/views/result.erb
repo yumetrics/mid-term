@@ -21,10 +21,10 @@
 
           
 
-
+        <% if @item.calculation < 500 %>
           <div class="coffee_container">
             <% (@item.calculation/28).times do |c| %>
-            <div class="coffee_set">
+            <div class="coffee_set" style="left:<%=50*c%>px; top:<%=30*c%>px %>">
                 <ul class='no_indent'>
                 <% 28.times do |img| %>
                 <li class='coffee_icon'></li>
@@ -33,7 +33,7 @@
             </div>
             <% end %>
             <% if @item.calculation % 28 != 0 %>
-              <div class="coffee_set">
+              <div class="coffee_set" >
                 <ul class='no_indent'>
                 <% (@item.calculation % 28).times do |img| %>
                 <li class='coffee_icon'></li>
@@ -42,6 +42,19 @@
             </div>
             <% end %>
           </div>
+        <% else %>
+          <% 18.times do |c| %>
+            <div class="coffee_set">
+                <ul class='no_indent'>
+                <% 28.times do |img| %>
+                <li class='coffee_icon'></li>
+                <% end %>
+              </ul>
+            </div>
+          <% end %>
+            <h1 class="last_label">Ran out of coffee pics. Soz</h1>
+        <% end %>
+          
           
         
       </div>

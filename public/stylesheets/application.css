@@ -2,14 +2,14 @@
   display: block;
 }
 
-.coffee_container {
+/*.coffee_container {
   display: block;
   position:relative;
   border: 2px solid black;
   width: 600px;
   height: 600px;
 
-}
+}*/
 
 .coffee_set {
   position: absolute;
@@ -30,6 +30,12 @@ li.coffee_icon {
   display: inline;
   width: 15%;
   height: 15%;
-  margin-left: -1em;
 
+
+}
+
+.last_label {
+  background-color: #FFFFFF;
+  opacity: .99;
+  width: 50%;
 }
