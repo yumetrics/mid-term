@@ -17,6 +17,10 @@ get '/results' do
   erb :result
 end
 
+get '/coffee' do
+  erb :coffee
+end
+
 post '/results' do
   @items = Item.new(
     user_id: 1,
