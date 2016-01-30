@@ -9,6 +9,7 @@ end
 
 get '/' do
   session[:user_id]
+  @all_items = Item.all.limit(10).reverse
   erb :index
 end
 

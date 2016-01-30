@@ -1,3 +1,4 @@
+
 <div id="wrapper">
 
 <!-- Sidebar -->
@@ -8,7 +9,10 @@
                 Top 10
               </a>
           </li>
+          <% @all_items.each do |item| %>
+
           <li>
+
               <a href="#"><%= Item.all.order(created_at: :desc).limit(10) %></a>
           </li>
           <li>
@@ -28,7 +32,11 @@
           </li>
           <li>
               <a href="#">Contact</a>
+
+              <a href="#"><%= item.desired_name %></a>
+
           </li>
+          <% end %>
       </ul>
   </div>
 <!-- /#sidebar-wrapper -->
