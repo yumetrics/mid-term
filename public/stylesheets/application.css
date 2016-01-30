@@ -2,12 +2,19 @@
   display: block;
 }
 
-.container_coffee {
+.coffee_container {
   display: block;
-  z-index: auto;
+  position:relative;
+  border: 2px solid black;
+  width: 600px;
+  height: 600px;
+
+}
+
+.coffee_set {
+  position: absolute;
   padding-right:15px;
   padding-left:15px;
-  border: 2px solid black;
   width: 600px;
   height: 600px;
 }
