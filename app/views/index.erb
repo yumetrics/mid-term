@@ -2,12 +2,14 @@
 <!-- url(http://i.imgur.com/T1uCO2F.jpg) -->
 <link rel="stylesheet" href="/stylesheets/cssshake.css">
 
-<div id="wrapper">
+<!-- <div id="wrapper"> -->
 
 <!-- Sidebar -->
   <div id="sidebar-wrapper">
       <ul class="sidebar-nav">
           <li class="sidebar-brand">
+            <h4>Welcome, <%= current_user.name %> </h4> 
+
               <a href="">
                 Last 10 Guilts
               </a>
@@ -16,36 +18,11 @@
             <% @all_items.each do |item| %>
 
           <li>
-
-<<<<<<< HEAD
-=======
-
-              <a href="#"><%= Item.all.order(created_at: :desc).limit(10) %></a>
-          </li>
-          <li>
-              <a href="#">Shortcuts</a>
-          </li>
-          <li>
-              <a href="#">Overview</a>
-          </li>
-          <li>
-              <a href="#">Events</a>
-          </li>
-          <li>
-              <a href="#">About</a>
-          </li>
-          <li>
-              <a href="#">Services</a>
-          </li>
-          <li>
-              <a href="#">Contact</a>
-
->>>>>>> 151d28d80d6631bd310a6e3e22af24585a69cf97
->>>>>>> bad4638d5b8880a1fe99e12866f319779b0a5bcb
-              <a href="#"><%= item.desired_name %></a>
+        
+              <a href=""><%= item.desired_name %></a>
 
           </li>
-          <% end %>
+        <% end %>
       </ul>
   </div>
 <!-- /#sidebar-wrapper -->
@@ -123,5 +100,5 @@
   </div>
 <!-- /#page-content-wrapper -->
 
-</div>
+<!-- </div> -->
 <!-- /#wrapper
