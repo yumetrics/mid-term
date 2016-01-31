@@ -18,9 +18,9 @@ get '/results' do
   erb :result
 end
 
-# get '/pastresults' do
-#   @item = Item.find_by()
-# end
+get '/coffee' do
+  erb :coffee
+end
 
 post '/results' do
   @items = Item.new(
