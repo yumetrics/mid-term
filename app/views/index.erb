@@ -1,3 +1,6 @@
+<!-- url(http://i.imgur.com/ydlRy4G.png); -->
+<!-- url(http://i.imgur.com/T1uCO2F.jpg) -->
+<link rel="stylesheet" href="/stylesheets/cssshake.css">
 
 <div id="wrapper">
 
@@ -5,13 +8,13 @@
   <div id="sidebar-wrapper">
       <ul class="sidebar-nav">
           <li class="sidebar-brand">
-              <a href="#">
-                Top 10
+              <a href="">
+                Last 10 Guilts
               </a>
           </li>
           <% @all_items.each do |item| %>
             <li>
-              <a href="/result"><%= item.desired_name %></a>
+            <a href=""><%= item.desired_name %></a>
             </li>
           <% end %>
       </ul>
@@ -24,6 +27,11 @@
       <div class="row">
           <div class="col-lg-12">
               <h1>Coffee Guilt</h1>
+
+              <div class="shake-slow shake-constant" style="width:200px">
+              <img src="/images/thecup-cutout.png" alt="Cup"
+              style="width:25%;height:25%;"></img>
+              </div>
 
               <% if @items && @items.errors.any? %>
                 <div>
@@ -55,21 +63,21 @@
                   <p> How many fancy $5 coffees does it take to buy your dream item?</p>
                 </div>
                 
-               <!--  <div class="col-xs-8">
+               <div class="col-xs-8">
                   <br>
-                  <label for="BaseName">Base Item:</label>
-                  <input type="text" class="form-control" name="base_name" id="base_name" value="coffee" readonly placeholder="coffee">
-               </div> -->
+                  <label for="BaseName"></label>
+                  <input type="hidden" class="form-control" name="base_name" id="base_name" value="coffee" readonly placeholder="coffee">
+               </div>
 
-                <!-- <div class="col-xs-8">
+                <div class="col-xs-8">
                   <br>
-                  <label for="BasePrice">Base Item Cost:</label>
-                  <input type="integer" class="form-control" name="base_price" id="base_price" value="5" readonly placeholder="5">
-               </div>  --> 
+                  <label for="BasePrice"></label>
+                  <input type="hidden" class="form-control" name="base_price" id="base_price" value="5" readonly placeholder="5">
+               </div> 
 
                 <div class="col-sm-10">
                   <br>
-                  <button type="submit" class="btn btn-primary">Calculate</button>
+                  <button type="submit" class="btn btn-primary">Guilt !</button>
                 </div>
 
               </form>
@@ -82,4 +90,4 @@
 <!-- /#page-content-wrapper -->
 
 </div>
-<!-- /#wrapper -->
+<!-- /#wrapper

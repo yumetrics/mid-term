@@ -35,7 +35,7 @@ post '/results' do
       redirect '/results'
     else
       @items.errors.full_messages
-      erb :'index' 
+      erb :'index'
     end
   end
 
