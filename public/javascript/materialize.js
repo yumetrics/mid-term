@@ -3711,9 +3711,47 @@ $(document).ready(function(){
     $(selector).find('li').each(function() {
       $(this).velocity(
         { opacity: "1", translateX: "0"},
-        { duration: 800, delay: time, easing: [60, 10] });
-      time += 120;
+        { duration: 200, delay: time, easing: [1, 30] });
+      time += 50;
     });
+
+    $.each($('.coffee_icon'), function (index, obj) {
+    	$(this).css({
+        'width' : (30 + (Math.random() * 50))
+    	});
+    });
+
+  // $.when( $(selector) ).done(function() {
+  //   $( "h7" ).append( "Ran out of coffee cups. Sorry" );
+  // });
+
+    $('.coffee_container').each(function() {
+    	var $container = $(this);            
+    	var $setArr = $container.children('.coffee_set');
+			$setArr.sort(function(a,b){
+			var temp = parseInt( Math.random()*10 );
+			var isOddOrEven = temp%2;
+			var isPosOrNeg = temp>5 ? 1 : -1;
+
+      return( isOddOrEven*isPosOrNeg );
+      })
+      .appendTo($container);            
+      });
+
+    $('ul').each(function() {
+    	var $ul = $(this);            
+    	var $liArr = $ul.children('li');
+			$liArr.sort(function(a,b){
+			var temp = parseInt( Math.random()*10 );
+			var isOddOrEven = temp%2;
+			var isPosOrNeg = temp>5 ? 1 : -1;
+
+      return( isOddOrEven*isPosOrNeg );
+      })
+      .appendTo($ul);            
+      });
+
+
   };
 
 

@@ -12,11 +12,15 @@
                 Last 10 Guilts
               </a>
           </li>
-            <% @last10.each do |item| %>
+            
+            <% @all_items.each do |item| %>
+
           <li>
-            <a href=""><%= item.desired_name %></a>
+
+              <a href="#"><%= item.desired_name %></a>
+
           </li>
-            <% end %>
+          <% end %>
       </ul>
   </div>
 <!-- /#sidebar-wrapper -->

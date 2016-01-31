@@ -9,8 +9,7 @@ end
 
 get '/' do
   session[:user_id]
-  @last10 = Item.all.limit(10).reverse
-  @lastentry = Item.all.limit(10).reverse.first
+  @all_items = Item.all.limit(10).reverse
   erb :index
 end
 

@@ -2,14 +2,15 @@
   display: block;
 }
 
-/*.coffee_container {
+.coffee_container {
   display: block;
   position:relative;
-  border: 2px solid black;
-  width: 600px;
-  height: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 700px;
+  height: 700px;
 
-}*/
+}
 
 .coffee_set {
   position: absolute;
@@ -20,22 +21,32 @@
 }
 
 
-ul.no_indent {
+ul.coffee_list {
     margin-left: 0em;
 /*    padding-left: -10em;*/
 }
 
 li.coffee_icon {
-  content: url(http://imgh.us/coffee.svgz);
+  content: url(http://i67.tinypic.com/anh5dj.png);
   display: inline;
-  width: 15%;
-  height: 15%;
+  width: 13%;
+  height: 13%;
 
 
 }
 
 .last_label {
+  z-index: 9999;
+  position:fixed;
+  top: 50%;
+  left: auto;
+  right: auto;
   background-color: #FFFFFF;
-  opacity: .99;
-  width: 50%;
+  text-align: center;
+  font-size: 65px;
+}
+
+.last_label h7 {
+  font-size: 36px;
+  font-weight: 900;
 }
