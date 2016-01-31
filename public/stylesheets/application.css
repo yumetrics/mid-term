@@ -2,14 +2,15 @@
   display: block;
 }
 
-/*.coffee_container {
+.coffee_container {
   display: block;
   position:relative;
-  border: 2px solid black;
-  width: 600px;
-  height: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 700px;
+  height: 700px;
 
-}*/
+}
 
 .coffee_set {
   position: absolute;

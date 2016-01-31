@@ -3711,9 +3711,22 @@ $(document).ready(function(){
     $(selector).find('li').each(function() {
       $(this).velocity(
         { opacity: "1", translateX: "0"},
-        { duration: 800, delay: time, easing: [60, 10] });
-      time += 120;
+        { duration: 800, delay: time, easing: [10, 40] });
+      time += 100;
     });
+
+    $('ul').each(function() {
+    	var $ul = $(this);            
+    	var $liArr = $ul.children('li');
+			$liArr.sort(function(a,b){
+			var temp = parseInt( Math.random()*10 );
+			var isOddOrEven = temp%2;
+			var isPosOrNeg = temp>5 ? 1 : -1;
+
+      return( isOddOrEven*isPosOrNeg );
+      })
+      .appendTo($ul);            
+      });
   };
 
 
