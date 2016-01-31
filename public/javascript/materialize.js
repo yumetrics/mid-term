@@ -3715,6 +3715,25 @@ $(document).ready(function(){
       time += 100;
     });
 
+    $.each($('.coffee_icon'), function (index, obj) {
+    	$(this).css({
+        'width' : (30 + (Math.random() * 50))
+    	});
+    });
+
+    $('.coffee_container').each(function() {
+    	var $container = $(this);            
+    	var $setArr = $container.children('.coffee_set');
+			$setArr.sort(function(a,b){
+			var temp = parseInt( Math.random()*10 );
+			var isOddOrEven = temp%2;
+			var isPosOrNeg = temp>5 ? 1 : -1;
+
+      return( isOddOrEven*isPosOrNeg );
+      })
+      .appendTo($container);            
+      });
+
     $('ul').each(function() {
     	var $ul = $(this);            
     	var $liArr = $ul.children('li');
@@ -3727,6 +3746,8 @@ $(document).ready(function(){
       })
       .appendTo($ul);            
       });
+
+
   };
 
 
