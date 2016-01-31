@@ -1,13 +1,23 @@
 
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
+<!--   <link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
+   <link rel="stylesheet" href="/stylesheets/application.css">
+  <link rel="stylesheet" href="/stylesheets/simple-sidebar.css"> -->
+
+ <link rel="stylesheet" href="/stylesheets/csshake-slow.css">
+
       <meta charset="utf-8">
       <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
       <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyDo_dvuUBxywJWJD6DFQEKnExIEtPTwgMo">
       </script>
+
+
+   
       <script>
+      
+
       var map;
       var infowindow;
 
@@ -81,18 +91,35 @@
       </script>
 
       <style>
+
+  
   
       html, body, #map {
         height: 100%;
-          margin: 40px;
+          margin-top: 30px;
+          margin-bottom: 150px;
+          margin-left: 40px;
+          margin-right: 40px;
         padding: 0px
       }
+    h1.cafe {
+    font-size: 36px;
+    color: black;
+    text-align: center
+  }
+
+
+      
       </style>
   </head>
   <body>
-
-    <h1>Café Finder</h1>
-    <div id="map">
+  <!-- To shake constant -->
+<!-- <div class="shake-slow shake-constant"></div> -->
+<!-- and stops on :hover -->
+<div class="shake-slow shake-constant shake-constant--hover"> <h1 class="cafe">Café Finder</h1></div>
+     
+      </div>
+      <div id="map">
     </div>
   </body>
 </html>
