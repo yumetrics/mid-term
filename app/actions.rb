@@ -9,7 +9,8 @@ end
 
 get '/' do
   session[:user_id]
-  @all_items = Item.all.limit(10).reverse
+  @last10 = Item.all.limit(10).reverse
+  @lastentry = Item.all.limit(10).reverse.first
   erb :index
 end
 
@@ -17,6 +18,10 @@ get '/results' do
   @item = Item.last
   erb :result
 end
+
+# get '/pastresults' do
+#   @item = Item.find_by()
+# end
 
 post '/results' do
   @items = Item.new(
@@ -27,10 +32,6 @@ post '/results' do
     base_price: params[:base_price]
     )
 
-    # @items.save
-    # if @items.save
-    #   p "success"
-    # end
     if @items.save
       redirect '/results'
     else
