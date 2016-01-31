@@ -27,7 +27,7 @@ ul.coffee_list {
 }
 
 li.coffee_icon {
-  content: url(http://imgh.us/coffee.svgz);
+  content: url(http://i67.tinypic.com/anh5dj.png);
   display: inline;
   width: 13%;
   height: 13%;
@@ -36,7 +36,17 @@ li.coffee_icon {
 }
 
 .last_label {
+  z-index: 9999;
+  position:fixed;
+  top: 50%;
+  left: auto;
+  right: auto;
   background-color: #FFFFFF;
-  opacity: .99;
-  width: 50%;
+  text-align: center;
+  font-size: 65px;
+}
+
+.last_label h7 {
+  font-size: 36px;
+  font-weight: 900;
 }

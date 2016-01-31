@@ -3711,8 +3711,8 @@ $(document).ready(function(){
     $(selector).find('li').each(function() {
       $(this).velocity(
         { opacity: "1", translateX: "0"},
-        { duration: 800, delay: time, easing: [10, 40] });
-      time += 100;
+        { duration: 200, delay: time, easing: [1, 30] });
+      time += 50;
     });
 
     $.each($('.coffee_icon'), function (index, obj) {
@@ -3720,6 +3720,10 @@ $(document).ready(function(){
         'width' : (30 + (Math.random() * 50))
     	});
     });
+
+  // $.when( $(selector) ).done(function() {
+  //   $( "h7" ).append( "Ran out of coffee cups. Sorry" );
+  // });
 
     $('.coffee_container').each(function() {
     	var $container = $(this);            
