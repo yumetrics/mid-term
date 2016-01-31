@@ -39,7 +39,7 @@ TYPE4 = [
 # if result >= $50000 (desired_item is >= base_item * 10000)
 TYPE5 = [
   "Welp, on the brightside, you'll corner the stock market on coffee if you liquidate",
-  "Either your a complete moron or your really really stupid",
+  "Either you're a complete moron or you're really really stupid",
   "I don't think coffee is the issue here.",
   "You just wanted to see a lot of coffee. Didn't you?",
   "Are you the great coffee bandit of 1874?"
