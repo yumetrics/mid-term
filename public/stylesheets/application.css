@@ -90,6 +90,33 @@ li.coffee_icon {
   display: block;
 }
 
-.col-xs-8 {
-  display: block;
+
+.container-fluid {
+  position: fixed;
+  margin-left: auto;
+  margin-right: auto;
 }
+
+.center {
+    text-align:center;
+    display: inline-block;
+}
+
+.center form {
+    display:inline-block;
+}
+
+.col-xs-8 {
+  text-align: center;
+}
+
+.col-xs-8 h1 {
+  text-align: center;
+  margin-left: 200px;
+}
+
+.shake-slow {
+  margin-left: 200px;
+}
+
+

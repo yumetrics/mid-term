@@ -29,14 +29,9 @@
 <!-- Page Content -->
   <div id="page-content-wrapper">
     <div class="container-fluid">
-      <div class="row">
+      <div class="center">
           <div class="col-lg-12">
-              <h1>Coffee Guilt</h1>
-
-              <div class="shake-slow shake-constant" style="width:200px">
-              <img src="/images/thecup-cutout.png" alt="Cup"
-              style="width:25%;height:25%;"></img>
-              </div>
+              
 
               <% if @items && @items.errors.any? %>
                 <div>
@@ -50,6 +45,14 @@
               <% end %>
 
             <div class="row">
+              <div class="col-xs-8">
+              <h1>Coffee Guilt</h1>
+
+              <div class="shake-slow shake-constant" style="width:100px">
+              <img src="http://i68.tinypic.com/2iqmi3t.png" alt="Cup"
+              style="width:75%;height:75%;"></img>
+              </div>
+              </div>
               <form class="form-horizontal" method="post" action="/results">
 
                 <div class="col-xs-8">
@@ -85,18 +88,13 @@
                   <input type="hidden" class="form-control" name="base_price" id="base_price" value="5" readonly placeholder="5">
                </div> 
 
-                <!-- <div class="col-sm-10">
-                  <br>
-                  <button type="submit" class="btn btn-primary">Guilt !</button>
-                </div> -->
-
+              <div class="col-xs-8">
+              <button class="btn btn-primary"> <a class="cafe_finder" href="/coffee"> Cafe Finder</a> </button> 
+              </div>
               </form>
 
             </div>
-              <button class="btn btn-primary"> <a class="cafe_finder" href="/coffee"> Cafe Finder</a> </button> 
-            <div>
-
-  </div>
+              
         </div>
       </div>
     </div>
