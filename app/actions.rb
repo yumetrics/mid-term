@@ -22,7 +22,9 @@ get '/results' do
   end
 end
 
-get '/pastresults' do
+get '/results/:desired_name' do
+  @item = Item.where(desired_name: params[:desired_name])
+  erb :'results/old'
 end
 
 get '/coffee' do
@@ -62,8 +64,8 @@ post '/results' do
     end
   end
 
-  post '/' do
-    @results = Item.last(10).reverse
-    erb :index
-  end
+  # post '/' do
+  #   @results = Item.last(10).reverse
+  #   erb :index
+  # end
 
