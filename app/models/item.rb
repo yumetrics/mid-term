@@ -34,7 +34,7 @@ def calculation
 end
 
 def googlecoffee
-  calculation >= 10000
+  calculation >= 10000000
 end
 
 end

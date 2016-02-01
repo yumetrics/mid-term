@@ -16,6 +16,7 @@ end
 get '/results' do
   @item = Item.last
   if @item.googlecoffee
+    @items = Item.where(id: params[:id])
     redirect '/coffee'
   else
     erb :result

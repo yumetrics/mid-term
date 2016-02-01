@@ -10,12 +10,14 @@
           <li class="sidebar-brand">
             <h4>Welcome, <%= current_user.name %> </h4> 
 
-              <h3>Last 10 Guilts</h3>
+              <h3>Last 10 Guilts </h3>
+
           </li>
+          <h3></h3>
             <% if @all_items %>
              <% @all_items.each do |i| %>
             <li>
-              <a href="/results/<%= i.id %>"> <%= i.desired_name %> </a>
+              <a href="/results/<%= i.id %>"> $<%= i.desired_price %> <%= i.desired_name %> </a>
             </li>
 
 
@@ -72,7 +74,7 @@
                 </div>
 
                 <div class="col-xs-8">
-                  <p> How many fancy $5 coffees does it take to buy your dream item?</p>
+                  <p> How many fancy $5 coffees do you need to give up to afford your dream item?</p>
                 </div>
 
                 <div class="col-sm-10">
