@@ -15,9 +15,9 @@
               </h3>
           </li>
 
-             <% @all_items.each do |item| %>
+             <% @all_items.each do |i| %>
             <li>
-              <p> <%= item.desired_name %> </p>
+              <a href="/results/<%= i.id %>"> <%= i.desired_name %> </a>
             </li>
 
           <% end %>
