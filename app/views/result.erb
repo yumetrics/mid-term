@@ -12,10 +12,10 @@
           <div class="col-lg-12">
             <h1>Results</h1>
 
-            <h2>A <%= @item.desired_name %> will get you <%= @item.calculation.to_s.reverse.gsub(/(\d{3})(?=\d)/, '\\1,').reverse %>  <%= @item.base_name %>s </h2>
+            <h2>A <%= @item.desired_name %> is equivalent to <%= @item.calculation.to_s.reverse.gsub(/(\d{3})(?=\d)/, '\\1,').reverse %>  <%= @item.base_name %>s </h2>
 
             <h3> <%= @item.threshold %> </h3>
-            <h4> * Click on a coffee cup to go home  </h4>
+            <h4> * Click on a coffee cup to do another search</h4>
 
           </div>
         </div>

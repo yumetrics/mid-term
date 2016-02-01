@@ -9,7 +9,7 @@ end
 
 get '/' do
   session[:user_id]
-  @all_items = Item.all.order(created_at: :desc).limit(10)
+  @all_items = Item.all.where(user_id: session[:user_id]).order(created_at: :desc).limit(10)
   erb :index
 end
 
@@ -48,7 +48,7 @@ end
 # end
 
 post '/log_in' do
-  user = User.find { |u| u[:username] == params[:username] }
+  user = User.find { |u| u[:name] == params[:name] }
   if user && user[:password] == params[:password]
     session[:user_id] = user[:id] 
   end
@@ -56,7 +56,8 @@ post '/log_in' do
 end
 
 get '/log_out' do
-   session.clear
+  session[:user_id] = nil
+  session.clear
   redirect '/'
 end
 
