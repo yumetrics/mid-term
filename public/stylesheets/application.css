@@ -99,6 +99,13 @@ a.btn {
   font-size: 20px;
 }
 
+a#logout {
+  width: 50%;
+  background-color: #420000;
+  opacity: .7;
+  margin-left: 50px;
+}
+
 
 .container-fluid {
   position: absolute;

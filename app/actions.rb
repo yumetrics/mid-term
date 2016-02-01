@@ -35,16 +35,29 @@ get '/login' do
   erb :login
 end
 
-post '/login' do
-  @user = User.find_by(
-    name: params[:name]
-    )
-  if @user
-    session[:user_id] = @user.id
-    redirect '/'
-  else
-    erb :'login'
+# post '/login' do
+#   @user = User.find_by(
+#     name: params[:name]
+#     )
+#   if @user
+#     session[:user_id] = @user.id
+#     redirect '/'
+#   else
+#     erb :'login'
+#   end
+# end
+
+post '/log_in' do
+  user = User.find { |u| u[:username] == params[:username] }
+  if user && user[:password] == params[:password]
+    session[:user_id] = user[:id] 
   end
+  redirect '/'
+end
+
+get '/log_out' do
+   session.clear
+  redirect '/'
 end
 
 post '/results' do

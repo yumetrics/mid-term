@@ -3,7 +3,7 @@
 <link rel="stylesheet" href="/stylesheets/cssshake.css">
 
 <!-- <div id="wrapper"> -->
-
+<% if current_user %>
 <!-- Sidebar -->
   <div id="sidebar-wrapper">
       <ul class="sidebar-nav">
@@ -20,7 +20,9 @@
               <a href="/results/<%= i.id %>"> <%= i.desired_name %> </a>
             </li>
 
+
           <% end %>
+          <li> <br/> <a class="btn btn-default" id="logout" href="/log_out" role="button">Log Out</a></li>
 
           <% elsif @all_items == nil %>
             <% redirect '/coffee' %>
@@ -102,6 +104,56 @@
     </div>
   </div>
 <!-- /#page-content-wrapper -->
+<% else %>
+
+
+<% if @user && @user.errors.any? %>
+  <div>
+    <strong>Some issues with your username, please fix them:</strong>
+    <ul>
+      <% @user.errors.full_messages.each do |user| %>
+        <li><%= user %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<div class="center">
+<div class="row">
+
+<form class="form-horizontal" method="post" action="/log_in">
+  <div class="col-xs-8">
+    <h1>Coffee Guilt</h1>
+
+    <div class="shake-slow shake-constant">
+    <img id="shake_cup" src="http://i68.tinypic.com/2iqmi3t.png" alt="Cup"></img>
+    </div>
+    <h3> Log in to start checking how many expensive coffees you'll need to give up to buy your dream item!</h3>
+  </div>
+    <div class="col-xs-8">
+    <br>
+      <label for="Username">Username:</label>
+      <input type="text" class="form-control" name="name" id="Username" placeholder="Username">
+   </div>
+
+    <div class="col-xs-8">
+    <br>
+      <label for="Password">Password:</label>
+      <input type="text" class="form-control" name="password" id="Password" placeholder="Password">
+    </div>
+    
+    <div class="col-sm-10">
+      <br>
+      <button type="submit" class="btn btn-primary">Log In</button>
+    </div>
+
+
+  </form>
+</div>
+</div>
+
+<% end %>
+
 
 <!-- </div> -->
 <!-- /#wrapper
