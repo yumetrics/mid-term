@@ -3725,24 +3725,24 @@ $(document).ready(function(){
   //   $( "h7" ).append( "Ran out of coffee cups. Sorry" );
   // });
 
-    $('.coffee_container').each(function() {
-    	var $container = $(this);            
-    	var $setArr = $container.children('.coffee_set');
-			$setArr.sort(function(a,b){
-			var temp = parseInt( Math.random()*10 );
-			var isOddOrEven = temp%2;
-			var isPosOrNeg = temp>5 ? 1 : -1;
+   //  $('.coffee_container').each(function() {
+   //  	var $container = $(this);            
+   //  	var $setArr = $container.children('.coffee_set');
+			// $setArr.sort(function(a,b){
+			// var temp = parseInt( Math.random()*10 );
+			// var isOddOrEven = temp%2;
+			// var isPosOrNeg = temp>5 ? 1 : -1;
 
-      return( isOddOrEven*isPosOrNeg );
-      })
-      .appendTo($container);            
-      });
+   //    return( isOddOrEven*isPosOrNeg );
+   //    })
+   //    .appendTo($container);            
+   //    });
 
     $('ul').each(function() {
     	var $ul = $(this);            
     	var $liArr = $ul.children('li');
 			$liArr.sort(function(a,b){
-			var temp = parseInt( Math.random()*10 );
+			var temp = parseInt( Math.random()*500 );
 			var isOddOrEven = temp%2;
 			var isPosOrNeg = temp>5 ? 1 : -1;
 
