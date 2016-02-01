@@ -1,4 +1,4 @@
- <script src="//cdn.jsdelivr.net/velocity/1.2.3/velocity.min.js"></script>
+<script src="//cdn.jsdelivr.net/velocity/1.2.3/velocity.min.js"></script>
    <script> 
     $(document).ready(function() {Materialize.showStaggeredList('.coffee_list');
   });
@@ -14,11 +14,12 @@
             <h2>A <%= @item.desired_name %> will get you <%= @item.calculation.to_s.reverse.gsub(/(\d{3})(?=\d)/, '\\1,').reverse %>  <%= @item.base_name %>s </h2>
 
             <h3> <%= @item.threshold %> </h3>
+            <h4> * Click on a coffee cup to go home  </h4>
 
           </div>
         </div>
 
-        
+        <a id="coffee_link" href="/"> 
         <% if @item.calculation < 500 %>
           <div class="coffee_container">
             <% (@item.calculation/28).times do |c| %>
@@ -53,7 +54,7 @@
                   <% end %>
 
                 <% end %>
-
+</a>
               </ul>
 
             </div>

@@ -2,6 +2,22 @@ html {
   background: url("http://i.imgur.com/4aqfVFm.png");
 }
 
+.btn-primary {
+  color: black;
+  background-color: rgba(138, 109, 59, 0.5);
+  border-color: #333
+}
+
+.btn-primary:hover {
+  color: white;
+  background-color: rgba(138, 109, 59, 0.5);
+  border-color: black
+}
+
+
+.form-horizontal {
+  width: 40%;
+}
 .result_box {
   display: block;
 }
