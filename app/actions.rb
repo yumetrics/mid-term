@@ -22,19 +22,9 @@ get '/results' do
   end
 end
 
-# get '/results?name=<% desired_item %>price=<% desired_price %>' do
-#   @old_items = Item.all.order(created_at: :desc).limit(10)
-#   @item = @old_items.where(desired_name: params[:desired_name])
-#   erb :'results/old'
-# end
-
-
-
 get '/results/:id' do
-  # binding.pry
-  # @item = Item.find_by(desired_name: params[:desired_name])
-@items = Item.where(id: params[:id])
-  erb :'results/old'
+  @items = Item.where(id: params[:id])
+    erb :'results/old'
 end
 
 get '/coffee' do
@@ -74,8 +64,4 @@ post '/results' do
     end
   end
 
-  # post '/' do
-  #   @results = Item.last(10).reverse
-  #   erb :index
-  # end
 

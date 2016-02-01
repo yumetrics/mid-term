@@ -14,12 +14,16 @@
                 Last 10 Guilts
               </h3>
           </li>
-
+            <% if @all_items %>
              <% @all_items.each do |i| %>
             <li>
               <a href="/results/<%= i.id %>"> <%= i.desired_name %> </a>
             </li>
 
+          <% end %>
+
+          <% elsif @all_items == nil %>
+            <% redirect '/coffee' %>
           <% end %>
 
       </ul>
@@ -45,16 +49,16 @@
               <% end %>
 
             <div class="row">
-              <div class="col-xs-8">
+
+
+              <form class="form-horizontal" method="post" action="/results">
+                    <div class="col-xs-8">
               <h1>Coffee Guilt</h1>
 
-              <div class="shake-slow shake-constant" style="width:100px">
-              <img src="http://i68.tinypic.com/2iqmi3t.png" alt="Cup"
-              style="width:75%;height:75%;"></img>
+              <div class="shake-slow shake-constant">
+              <img id="shake_cup" src="http://i68.tinypic.com/2iqmi3t.png" alt="Cup"></img>
               </div>
               </div>
-              <form class="form-horizontal" method="post" action="/results">
-
                 <div class="col-xs-8">
                   <br>
                   <label for="DesiredName">Dream Item</label>
@@ -73,7 +77,8 @@
 
                 <div class="col-sm-10">
                   <br>
-                  <button type="submit" class="btn btn-primary ">Guilt !</button>
+                  <button type="submit" class="btn btn-primary">Guilt! </button>
+                  <a class="btn btn-primary" href="/coffee" role="button"> Cafe Finder</a> 
                 </div>
                 
                <div class="col-xs-8">
@@ -88,9 +93,6 @@
                   <input type="hidden" class="form-control" name="base_price" id="base_price" value="5" readonly placeholder="5">
                </div> 
 
-              <div class="col-xs-8">
-              <button class="btn btn-primary"> <a class="cafe_finder" href="/coffee"> Cafe Finder</a> </button> 
-              </div>
               </form>
 
             </div>

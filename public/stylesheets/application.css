@@ -27,6 +27,7 @@ li p {
 }
 
 .sidebar-brand h3 {
+  font-size: 28px;
   color: white;
 }
 
@@ -87,14 +88,23 @@ li.coffee_icon {
 }
 
 .btn {
-  display: block;
+  margin-right: 80px;
+  width: 50%;
+  font-size: 20px;
+}
+
+a.btn {
+  margin-right: 80px;
+  width: 50%;
+  font-size: 20px;
 }
 
 
 .container-fluid {
-  position: fixed;
+  position: absolute;
   margin-left: auto;
   margin-right: auto;
+  text-align: center;
 }
 
 .center {
@@ -108,15 +118,65 @@ li.coffee_icon {
 
 .col-xs-8 {
   text-align: center;
+  font-size: 30px;
 }
 
 .col-xs-8 h1 {
   text-align: center;
-  margin-left: 200px;
+  font-size: 50px;
+  font-weight: 900;
 }
 
-.shake-slow {
-  margin-left: 200px;
+
+#map {
+    box-shadow: 10px 10px 23px -4px rgba(0,0,0,0.75)
+}
+  
+html, body, #map {
+      height: 100%;
+     
+        margin-bottom: 40px;
+        margin-left: 40px;
+        margin-right: 40px;
+
+      padding: 0px;
+        background-color: rgba(255, 255, 255, 0);
+    
+}
+
+h1.cafe {
+  font-size: 36px;
+  color: black;
+  text-align: center;
+  margin-right: 220px;
+}
+
+div.shake-slow {
+display: inherit;
+}
+
+#coffee_button {
+  margin-top: 10px;
+}
+#coffee_link {
+  color: black;
+}
+
+.cafe_finder {
+    font-family: Verdana;
+    text-align: center;
+    margin-right: 220px;
+}
+
+#coffee_button {
+  margin-right: 80px;
+  width: 8%;
+  font-size: 20px;
+}
+
+#shake_cup {
+  width: 35%;
+  height: 35%;
 }
 
 

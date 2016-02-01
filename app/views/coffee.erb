@@ -8,143 +8,102 @@
 
  <link rel="stylesheet" href="/stylesheets/csshake-slow.css">
 
-      <meta charset="utf-8">
-      <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
-      <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyDo_dvuUBxywJWJD6DFQEKnExIEtPTwgMo">
-      </script>
+<meta charset="utf-8">
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyDo_dvuUBxywJWJD6DFQEKnExIEtPTwgMo">
+</script>
 
+<script>
+  var map;
+  var infowindow;
 
-   
-      <script>
-      
+  var request;
+  var service;
+  var markers = [];
 
-      var map;
-      var infowindow;
+  function initialize() {
+    var center = new google.maps.LatLng(49.2822266,-123.1079249);
 
-      var request;
-      var service;
-      var markers = [];
+    map = new google.maps.Map(document.getElementById('map'), {
+        center: center,
+        zoom: 17
+  });
 
-      function initialize() {
-        var center = new google.maps.LatLng(49.2822266,-123.1079249);
+      request = {
+        location: center,
+        radius: 250,
+        types: ['cafe']
+    };
+    infowindow = new google.maps.InfoWindow();
 
-        map = new google.maps.Map(document.getElementById('map'), {
-            center: center,
-            zoom: 17
+        service = new google.maps.places.PlacesService(map);
+
+    service.nearbySearch(request, callback);
+
+    google.maps.event.addListener(map, 'rightclick', function(event) {
+      map.setCenter(event.latLng)
+      clearResults(markers)
+
+      var request = {
+          location: event.latLng,
+          radius: 250,
+          types: ['cafe']
+      };
+      service.nearbySearch(request, callback);
+    })
+  }
+
+  function callback(results, status) {
+      if(status == google.maps.places.PlacesServiceStatus.OK){
+        for (var i = 0; i < results.length; i++){
+            markers.push(createMarker(results[i]));
+        }
+      }
+  }
+
+  function createMarker(place) {
+      var placeLoc = place.geometry.location;
+      var marker = new google.maps.Marker({
+          map: map,
+          position: place.geometry.location
       });
 
-          request = {
-            location: center,
-            radius: 250,
-            types: ['cafe']
-        };
-        infowindow = new google.maps.InfoWindow();
+      google.maps.event.addListener(marker, 'click', function() {
+          infowindow.setContent(place.name);
+          infowindow.open(map, this);
+      });
+      return marker;
 
-            service = new google.maps.places.PlacesService(map);
-
-        service.nearbySearch(request, callback);
-
-        google.maps.event.addListener(map, 'rightclick', function(event) {
-          map.setCenter(event.latLng)
-          clearResults(markers)
-
-          var request = {
-              location: event.latLng,
-              radius: 250,
-              types: ['cafe']
-          };
-          service.nearbySearch(request, callback);
-        })
-      }
-
-      function callback(results, status) {
-          if(status == google.maps.places.PlacesServiceStatus.OK){
-            for (var i = 0; i < results.length; i++){
-                markers.push(createMarker(results[i]));
-            }
-          }
-      }
-
-      function createMarker(place) {
-          var placeLoc = place.geometry.location;
-          var marker = new google.maps.Marker({
-              map: map,
-              position: place.geometry.location
-          });
-
-          google.maps.event.addListener(marker, 'click', function() {
-              infowindow.setContent(place.name);
-              infowindow.open(map, this);
-          });
-          return marker;
-
-      }
-
-      function clearResults(markers) {
-          for (var m in markers) {
-              markers[m].setMap(null)
-          }
-          markers = []
-      }
-
-      google.maps.event.addDomListener(window, 'load', initialize);
-      </script>
-
-      <style>
-
-    #map{
-      box-shadow: 10px 10px 23px -4px rgba(0,0,0,0.75)
-    }
-    
-      html, body, #map {
-        height: 100%;
-       
-          margin-bottom: 40px;
-          margin-left: 40px;
-          margin-right: 40px;
-
-        padding: 0px;
-          background-color: rgba(255, 255, 255, 0);
-      
-      }
-    h1.cafe {
-    font-size: 36px;
-    color: black;
-    text-align: center;
   }
 
-  div.shake-slow {
-  display: inherit;
+  function clearResults(markers) {
+      for (var m in markers) {
+          markers[m].setMap(null)
+      }
+      markers = []
   }
 
-  #coffee_button {
-    margin-top: 10px;
-  }
-  #coffee_link {
-    color: black;
-  }
+  google.maps.event.addDomListener(window, 'load', initialize);
+</script>
 
-  .cafe_finder {
-    font-family: Verdana;
-    text-align: center
-  }
+</head>
 
-      
-      </style>
-  </head>
-  <body>
+<body>
   <div>
-  <button id="coffee_button" class="btn btn-primary"> <a id="coffee_link" href="/"> Home </a> </button> 
+    <button id="coffee_button" class="btn btn-primary"> <a id="coffee_link" href="/"> Home </a> </button> 
   </div>
   <!-- To shake constant -->
 <!-- <div class="shake-slow shake-constant"></div> -->
 <!-- and stops on :hover -->
-<div class="shake-slow shake-constant shake-constant--hover"> <h1 class="cafe">Café Finder</h1></div>
+  <div class="shake-slow shake-constant shake-constant--hover"> 
+    <h1 class="cafe">Café Finder</h1>
+  </div>
      
-      </div>
-      <p class="cafe_finder"> Looks like someone needs a coffee! 
-<br /> (Right-click to reset the 250m radius) </p>
-      <div id="map">
-    </div>
-  </body>
+  <p class="cafe_finder"> Looks like someone needs a coffee! 
+    <br /> 
+    (Right-click to reset the 250m radius) 
+  </p>
+  <div id="map">
+  </div>
+</body>
 </html>
