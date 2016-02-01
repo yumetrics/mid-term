@@ -80,9 +80,10 @@ li.coffee_icon {
   font-size: 65px;
 }
 
-.last_label h7 {
+.last_label h3 {
   font-size: 36px;
   font-weight: 900;
+  -webkit-transition-delay: 25s;
 }
 
 .btn {

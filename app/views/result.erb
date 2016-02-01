@@ -2,7 +2,9 @@
    <script> 
     $(document).ready(function() {Materialize.showStaggeredList('.coffee_list');
   });
+ h3.style.transitionDelay="25s"
   </script>
+  
 
  <div id="page-content-wrapper">
     <div class="container-fluid">
@@ -23,7 +25,7 @@
         <% if @item.calculation < 500 %>
           <div class="coffee_container">
             <% (@item.calculation/28).times do |c| %>
-            <div class="coffee_set" style="right:<%=2+c%>px; bottom:<%=3+c%>px; %>">
+            <div class="coffee_set" style="left:<%=2+c%>px; top:<%=3+c%>px; %>">
                 <ul class='coffee_list'>
                 <% 28.times do |img| %>
                   <li class='coffee_icon' style="transform: translateX(0px); opacity: 0;"></li>
@@ -45,19 +47,23 @@
         <% else %>
           <div class="coffee_container">
           <% 18.times do |c| %>
+
             <div class="coffee_set" style="right:<%=2+c%>px; bottom:<%=2+c%>px; %>">
                 <ul class='coffee_list'>
                 <% 28.times do |img| %>
                 <li class='coffee_icon' style="transform: translateX(0px); opacity: 0;"></li>
-                    <div class="last_label">
-                    </div>
-                  <% end %>
 
+                  <% end %>
+          
                 <% end %>
-</a>
+
+<div class="last_label">
+            <h3> Ran out of coffee pics Sorry </h3>
+          </div>
               </ul>
 
             </div>
+
           <% end %>
 
           </div>
