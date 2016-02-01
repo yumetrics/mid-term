@@ -35,7 +35,7 @@ ul.coffee_list {
 }
 
 li.coffee_icon {
-  content: url(http://i67.tinypic.com/anh5dj.png);
+  content: url(http://i68.tinypic.com/2iqmi3t.png);
   display: inline;
   width: 13%;
   height: 13%;
@@ -55,4 +55,12 @@ li.coffee_icon {
 .last_label h7 {
   font-size: 36px;
   font-weight: 900;
+}
+
+.btn {
+  display: block;
+}
+
+.col-xs-8 {
+  display: block;
 }

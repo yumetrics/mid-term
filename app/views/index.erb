@@ -14,8 +14,11 @@
                 Last 10 Guilts
               </a>
           </li>
-            
+          
             <% @all_items.each do |item| %>
+            <li>
+              <a href="/result"><%= item.desired_name %></a>
+
 
           <li>
         
@@ -71,7 +74,7 @@
 
                 <div class="col-sm-10">
                   <br>
-                  <button type="submit" class="btn btn-primary">Guilt !</button>
+                  <button type="submit" class="btn btn-primary ">Guilt !</button>
                 </div>
                 
                <div class="col-xs-8">
