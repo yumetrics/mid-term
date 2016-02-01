@@ -10,26 +10,18 @@
           <li class="sidebar-brand">
             <h4>Welcome, <%= current_user.name %> </h4> 
 
-              <a href="">
+              <h3>
                 Last 10 Guilts
-              </a>
+              </h3>
           </li>
-          
-            <% @all_items.each do |item| %>
+
+             <% @all_items.each do |item| %>
             <li>
-              <a href="/result"><%= item.desired_name %></a>
+              <p> <%= item.desired_name %> </p>
+            </li>
 
+          <% end %>
 
-          </li>
-
-
-
-
-
-        
-
-
-        <% end %>
       </ul>
   </div>
 <!-- /#sidebar-wrapper -->
