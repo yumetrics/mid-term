@@ -3,28 +3,51 @@
 
 helpers do
   def current_user
-    User.find { |u| u[:id] == session[:user_id] } if session[:user_id]
+    @current_user ||= User.find(session[:user_id]) if session[:user_id]
   end
 end
 
 get '/' do
   session[:user_id]
-  @all_items = Item.all.limit(10).reverse
+  @all_items = Item.all.order(created_at: :desc).limit(10)
   erb :index
 end
 
 get '/results' do
   @item = Item.last
-  erb :result
+  if @item.googlecoffee
+    redirect '/coffee'
+  else
+    erb :result
+  end
+end
+
+get '/pastresults' do
 end
 
 get '/coffee' do
   erb :coffee
 end
 
+get '/login' do
+  erb :login
+end
+
+post '/login' do
+  @user = User.find_by(
+    name: params[:name]
+    )
+  if @user
+    session[:user_id] = @user.id
+    redirect '/'
+  else
+    erb :'login'
+  end
+end
+
 post '/results' do
   @items = Item.new(
-    user_id: 1,
+    user_id: current_user.id,
     desired_name: params[:desired_name],
     desired_price: params[:desired_price],
     base_name: params[:base_name],
