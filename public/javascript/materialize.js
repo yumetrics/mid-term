@@ -3715,6 +3715,13 @@ $(document).ready(function(){
       time += 50;
     });
 
+     $(selector).find('h3').each(function() {
+      $(this).velocity(
+        { opacity: "1", translateX: "0"},
+        { duration: 800, delay: time, easing: [25, 30] });
+      time += 500;
+    });
+
     $.each($('.coffee_icon'), function (index, obj) {
     	$(this).css({
         'width' : (30 + (Math.random() * 50))
