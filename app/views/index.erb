@@ -20,11 +20,15 @@
               <a href="/result"><%= item.desired_name %></a>
 
 
-          <li>
-        
-              <a href=""><%= item.desired_name %></a>
-
           </li>
+
+
+
+
+
+        
+
+
         <% end %>
       </ul>
   </div>
@@ -44,7 +48,7 @@
 
               <% if @items && @items.errors.any? %>
                 <div>
-                  <strong>You base item is greater than your dream item! Try again.</strong>
+                  <strong>Your base item is greater than your dream item! Try again.</strong>
                   <ul>
                     <% @items.errors.full_messages.each do |message| %>
                       <li><%= message %></li>

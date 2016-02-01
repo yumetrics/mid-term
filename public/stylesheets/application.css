@@ -13,8 +13,8 @@ html {
   margin-right: auto;
   width: 700px;
   height: 700px;
-
-
+  border-radius: 800px;
+  background-color:rgba(0, 0, 0, 0.05)
 }
 
 .coffee_set {
@@ -24,6 +24,7 @@ html {
   width: 600px;
   height: 600px;
   border-radius: 600px;
+  background-color:rgba(0, 0, 0, 0.01)
 }
 
 
@@ -37,8 +38,6 @@ li.coffee_icon {
   display: inline;
   width: 13%;
   height: 13%;
-
-
 }
 
 .last_label {
