@@ -33,4 +33,8 @@ def calculation
  num.floor
 end
 
+def googlecoffee
+  calculation >= 10000
+end
+
 end

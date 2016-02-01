@@ -2,12 +2,14 @@
 <!-- url(http://i.imgur.com/T1uCO2F.jpg) -->
 <link rel="stylesheet" href="/stylesheets/cssshake.css">
 
-<div id="wrapper">
+<!-- <div id="wrapper"> -->
 
 <!-- Sidebar -->
   <div id="sidebar-wrapper">
       <ul class="sidebar-nav">
           <li class="sidebar-brand">
+            <h4>Welcome, <%= current_user.name %> </h4> 
+
               <a href="">
                 Last 10 Guilts
               </a>
@@ -16,8 +18,14 @@
             <% @all_items.each do |item| %>
             <li>
               <a href="/result"><%= item.desired_name %></a>
+
+
+          <li>
+        
+              <a href=""><%= item.desired_name %></a>
+
           </li>
-          <% end %>
+        <% end %>
       </ul>
   </div>
 <!-- /#sidebar-wrapper -->
@@ -95,5 +103,5 @@
   </div>
 <!-- /#page-content-wrapper -->
 
-</div>
+<!-- </div> -->
 <!-- /#wrapper
