@@ -2,6 +2,22 @@ html {
   background: url("http://i.imgur.com/4aqfVFm.png");
 }
 
+li p {
+  color: white;
+}
+
+.sidebar-brand h3 {
+  color: white;
+}
+
+.sidebar-brand h4 {
+  color: white;
+}
+
+-webkit-box-shadow: 10px 10px 23px -4px rgba(0,0,0,0.75);
+-moz-box-shadow: 10px 10px 23px -4px rgba(0,0,0,0.75);
+box-shadow: 10px 10px 23px -4px rgba(0,0,0,0.75);
+
 .result_box {
   display: block;
 }
@@ -13,8 +29,6 @@ html {
   margin-right: auto;
   width: 700px;
   height: 700px;
-  border-radius: 800px;
-  background-color:rgba(0, 0, 0, 0.05)
 }
 
 .coffee_set {
@@ -23,8 +37,6 @@ html {
   padding-left:15px;
   width: 600px;
   height: 600px;
-  border-radius: 600px;
-  background-color:rgba(0, 0, 0, 0.01)
 }
 
 
