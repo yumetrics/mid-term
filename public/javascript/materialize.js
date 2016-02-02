@@ -3749,11 +3749,11 @@ $(document).ready(function(){
     	var $ul = $(this);            
     	var $liArr = $ul.children('li');
 			$liArr.sort(function(a,b){
-			var temp = parseInt( Math.random()*500 );
-			var isOddOrEven = temp%2;
-			var isPosOrNeg = temp>5 ? 1 : -1;
+				var temp = parseInt( Math.random()*500 );
+				var isOddOrEven = temp%2;
+				var isPosOrNeg = temp>5 ? 1 : -1;
 
-      return( isOddOrEven*isPosOrNeg );
+      	return( isOddOrEven*isPosOrNeg );
       })
       .appendTo($ul);            
       });
